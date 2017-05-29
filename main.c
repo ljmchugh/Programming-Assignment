@@ -3,22 +3,59 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+ 
 /* 
  * File:   main.c
- * Author: Luke
+ * Author: 171984
  *
- * Created on 29 May 2017, 00:59
+ * Created on 26 May 2017, 10:59
  */
-
+ 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "Calculations.h" 
 /*
  * 
  */
-int main(int argc, char** argv) {
 
+
+
+
+int main(int argc, char** argv) {
+    double operand1,operand2;
+    char operator;    
+    int running=1;
+    while (running){
+    printf("Please enter an operator, or enter \"Q\" to quit\n");    
+    scanf (" %c", &operator);
+    if (operator=='Q'||operator=='q'){
+        running=0;
+        continue; //Program will no longer ask for values, and will exit the loop. 
+    }
+    printf("Enter the values\n");    
+    scanf (" %lf%lf", &operand1,&operand2);
+     
+    switch (operator){
+        case '+': PrintAddition(operand1,operand2); break;
+        case '-': PrintSubtraction (operand1,operand2); break;
+        case '/': PrintDivision (operand1,operand2); break;
+        case '*': 
+        case 'x': 
+        case 'X': PrintMultiplication (operand1,operand2); break;
+        case '^': PrintPower (operand1, operand2); break;
+        case 'v': 
+        case 'V': PrintRoot (operand1, operand2); break;
+        case '%': PrintPercentage (operand1, operand2); break;
+        default: printf ("%c The operator you entered is not supported",operator);
+    }
+    printf ("\n");
+    }
+               
+             
+             
+             
+ 
+    scanf("");
     return (EXIT_SUCCESS);
 }
 
