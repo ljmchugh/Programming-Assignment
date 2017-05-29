@@ -47,3 +47,8 @@ void PrintPercentage (double op1,double op2){
     double result=op1/100*op2;
     printf ("%lg%%%lg=%lg",op1,op2,result);
 }
+
+
+//http://www.cplusplus.com/reference/cstdio/printf/?kw=printf  g=float l=long double=long float
+
+//g = Float without trailing 0's. 
