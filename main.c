@@ -22,18 +22,20 @@
 
 
 int main(int argc, char** argv) {
-    double operand1,operand2;
+    float operand1,operand2;
     char operator;    
     int running=1;
     while (running){
     printf("Please enter one of the following operations\n\t+)Addition\n\t-)Subtraction\n\t/)Division\n\tx)Multiplication\n\tv)Root\n\t^)Power\n\t%%)Percentage\nOr enter Q to quit\n");    
-    scanf (" %c", &operator);
+    scanf ("%c", &operator);
     if (operator=='Q'||operator=='q'){
         running=0;
         continue; //Program will no longer ask for values, and will exit the loop. 
     }
-    printf("Enter a value and press return key to enter another\n");    
-    scanf ("%lf%lf", &operand1,&operand2);
+    printf("Please enter a value\n");    
+    scanf ("%f", &operand1);
+    printf("Please enter a second value\n");    
+    scanf ("%f", &operand2);
      
     switch (operator){
         case '+': PrintAddition(operand1,operand2); break;
