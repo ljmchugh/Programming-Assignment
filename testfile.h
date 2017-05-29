@@ -18,7 +18,7 @@
 extern "C" {
 #endif
 
-    printf
+    printf "test"
             
 
 
