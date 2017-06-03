@@ -19,7 +19,29 @@
  */
 
 
+void printWelcomeMessage(){
+    
+    
+    printf ("  ___   __   __     ___  _  _  __     __   ____   __   ____ \n");
+    printf (" / __) / _\\ (  )   / __)/ )( \\(  )   / _\\ (_  _) /  \\ (  _ \\\n");
+    printf ("( (__ /    \\/ (_/\\( (__ ) \\/ (/ (_/\\/    \\  )(  (  O ) )   /\n");
+    printf (" \\___)\\_/\\_/\\____/ \\___)\\____/\\____/\\_/\\_/ (__)  \\__/ (__\\_)\n\n");
+    printf ("Procedural Programming, by Luke McHugh\n\n");
 
+}
+
+void printUserOptions(){
+   
+    printf ("Please enter one of the following operations\n");
+    printf ("\t+)Addition\n");
+    printf ("\t-)Subtraction\n");
+    printf ("\t/)Division\n\tx)Multiplication\n");
+    printf ("\tv)Root\n");
+    printf ("\t^)Power\n");
+    printf ("\t%%)Percentage\n");
+    printf ("Or enter Q to quit\n");    
+ 
+}
 
 int main(int argc, char** argv) {
     float operand1,operand2;
@@ -27,20 +49,21 @@ int main(int argc, char** argv) {
     int running=1;
     double lastResult=0 ;
     char answer='N';
+    printWelcomeMessage();
     while (running){
-    printf("Please enter one of the following operations\n\t+)Addition\n\t-)Subtraction\n\t/)Division\n\tx)Multiplication\n\tv)Root\n\t^)Power\n\t%%)Percentage\nOr enter Q to quit\n");    
-    scanf (" %c", &operator);
+    printUserOptions();
+        scanf (" %c", &operator);
     if (operator=='Q'||operator=='q'){
         running=0;
-        continue; //Program will no longer ask for values, and will exit the loop. 
+        continue;                                         //Program will no longer ask for values, and will exit the loop. 
     }
-    // Program will give the user the option to use the last result.
+                                                          // Program will give the user the option to use the last result.
     
-    if (answer=='Y'||answer=='y'){
+    if (answer =='Y'||answer =='y'){
         operand1=lastResult;
         
     }
-    else if (answer=='N'||answer=='n'){
+    else if (answer =='N'||answer =='n'){
          
         printf("Please enter a value\n");    
         scanf ("%f", &operand1);
@@ -63,13 +86,12 @@ int main(int argc, char** argv) {
     }
     printf ("\n");
     
-    printf("Would you like to use last result? Y/N\n");
+    printf("Would you like to use last result? (Y/N)\n");
         scanf (" %c", &answer);
     
     }
     
-    
-               
+              
              
              
              
