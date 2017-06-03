@@ -18,13 +18,13 @@
 extern "C" {
 #endif
 
-void PrintAddition (double op1,double op2);
-void PrintSubtraction (double op1, double op2);
-void PrintDivision (double op1, double op2);
-void PrintMultiplication (double op1, double op2);
-void PrintPower (double op1, double op2);
-void PrintRoot (double op1, double op2);
-void PrintPercentage (double op1, double op2);
+double PrintAddition (double op1,double op2);
+double PrintSubtraction (double op1, double op2);
+double PrintDivision (double op1, double op2);
+double PrintMultiplication (double op1, double op2);
+double PrintPower (double op1, double op2);
+double PrintRoot (double op1, double op2);
+double PrintPercentage (double op1, double op2);
 
 #ifdef __cplusplus
 }

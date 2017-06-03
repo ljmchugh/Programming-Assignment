@@ -11,41 +11,48 @@
 #include <math.h>
 
 
-void PrintAddition (double op1,double op2){
+double PrintAddition (double op1,double op2){
     double result=op1+op2;
     printf ("%lg+%lg=%lg",op1,op2,result);
+    return result;
 }
 
-void PrintSubtraction (double op1,double op2){
+double PrintSubtraction (double op1,double op2){
     double result=op1-op2;
     printf ("%lg-%lg=%lg",op1,op2,result);
+    return result;
 }
 
-void PrintDivision (double op1,double op2){
+double PrintDivision (double op1,double op2){
     double result=op1/op2;
     printf ("%lg/%lg=%lg",op1,op2,result);
+    return result;
 }
 
-void PrintMultiplication (double op1,double op2){
+double PrintMultiplication (double op1,double op2){
     double result=op1*op2;
     printf ("%lgx%lg=%lg",op1,op2,result);
+    return result;
 }
 
-void PrintPower (double op1,double op2){
+double PrintPower (double op1,double op2){
     double result=powl(op1,op2);
     
     printf ("%lg^%lg=%lg",op1,op2,result);
+    return result;
 }
 
-void PrintRoot (double op1,double op2) {
+double PrintRoot (double op1,double op2) {
     double result=powl (op1, 1/op2);
     
     printf ("%lgv%lg=%lg",op1,op2,result);
+    return result;
 }
 
-void PrintPercentage (double op1,double op2){
+double PrintPercentage (double op1,double op2){
     double result=op1/100*op2;
     printf ("%lg%%%lg=%lg",op1,op2,result);
+    return result;
 }
 
 
