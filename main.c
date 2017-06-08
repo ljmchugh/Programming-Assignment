@@ -18,7 +18,7 @@
  * 
  */
 
-//
+// Prints out a welcome message
 void printWelcomeMessage(){    
     printf ("  ___   __   __     ___  _  _  __     __   ____   __   ____ \n");
     printf (" / __) / _\\ (  )   / __)/ )( \\(  )   / _\\ (_  _) /  \\ (  _ \\\n");
@@ -27,7 +27,7 @@ void printWelcomeMessage(){
     printf ("Procedural Programming, by Luke McHugh\n\n");
 }
 
-//
+// Prints a list of operations for the user 
 void printUserOptions(){    
     printf ("Please enter one of the following operations\n");
     printf ("\t+)Addition\n");
@@ -40,22 +40,25 @@ void printUserOptions(){
 }
 
 int main(int argc, char** argv) {
-    //
-    float operand1,operand2;
-    char operator;    
+    // these variables store input from the user 
+    double operand1,operand2;
+    char operator;
+    // this variable determines when to end the loop, and quit the application    
     int running=1;
     double lastResult=0 ;
-    char answer='N';    //
+    // determines whether the last result is used or not
+    char answer='N';    // Answer is set to "no" the first time the loop is executed 
     
     printWelcomeMessage();
     
-    //
+    // This is the applications main loop, and will run until (running) is set to 0
     while (running){
         printUserOptions();
         scanf (" %c", &operator);
-        if (operator=='Q'||operator=='q'){  //
+        // When the user enters "Q", the application will quit.                
+        if (operator=='Q'||operator=='q'){  
             running=0;
-            continue;   //Program will no longer ask for values, and will exit the loop. 
+            continue;  //Program will no longer ask for values, and will exit the loop. 
         }
 
         // Program will give the user the option to use the last result.
@@ -67,11 +70,12 @@ int main(int argc, char** argv) {
         printf("Please enter a second value\n");    
         scanf ("%f", &operand2);
         
-        //
+        // A list of potential conditionals for various mathematical equations.
         switch (operator){
             case '+': lastResult=PrintAddition(operand1,operand2); break;
             case '-': lastResult=PrintSubtraction (operand1,operand2); break;
             case '/': lastResult=PrintDivision (operand1,operand2); break;
+            // Multiple input methods that will result in the same operation. 
             case '*': 
             case 'x': 
             case 'X': lastResult=PrintMultiplication (operand1,operand2); break;
@@ -82,7 +86,7 @@ int main(int argc, char** argv) {
             default: printf ("%c The operation you entered is not supported",operator);
         }
         
-        //
+        // The user is asked whether to continue with the last result as the first operand. 
         printf("\nWould you like to use last result? (Y/N)\n");
         scanf (" %c", &answer);
     }
